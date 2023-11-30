@@ -9,7 +9,7 @@ import * as tf from "@tensorflow/tfjs-core";
 import "@tensorflow/tfjs-backend-webgl";
 import { RendererCanvas2d } from "../utils";
 
-export default function WebComponent() {
+export default function Exercise() {
   const SIMILARITY_THRESHOLD_EXCELLENT = 0.25;
   const SIMILARITY_THRESHOLD_GOOD = 0.55;
   const SIMILARITY_THRESHOLD_OKAY = 0.6;
@@ -17,9 +17,9 @@ export default function WebComponent() {
   const canvasRef = useRef(null);
 
   const image = useRef(null);
-  const [score, setscore] = useState(0);
+  const [score, setscore] = useState("Your review");
+  const [review,setReview] = useState(0);
   useEffect(() => {
-    console.log("hello");
     runPosenet();
   });
 
@@ -48,7 +48,7 @@ export default function WebComponent() {
     const videoHeight = webcamRef.current.height;
 
     console.log(pose[0]);
-    console.log(">>>>>>>>>");
+   
     return pose[0];
   };
 
@@ -64,14 +64,13 @@ export default function WebComponent() {
       webcamRef.current.video.width = videoWidth;
       webcamRef.current.video.height = videoHeight;
       const pose = await detector.estimatePoses(video);
-      console.log(pose[0]);
+      
       const tree = await getCoordinates(detector);
 
       if (tree && tree?.keypoints && pose && pose[0]?.keypoints) {
         let score = poseSimilarity(tree, pose[0]);
         let str = "";
         if (score <= SIMILARITY_THRESHOLD_EXCELLENT) {
-          console.log(score + ">>>>>>>>>>>..");
           str = "Excellent!!";
         } else if (score <= SIMILARITY_THRESHOLD_GOOD) {
           str = "Good!";
@@ -80,8 +79,8 @@ export default function WebComponent() {
         } else {
           str = "Meh..";
         }
-
-        setscore(str);
+        setscore(Math.round((1-score)*100))
+        setReview(str);
       } else return;
 
       drawCanvas(pose, video, videoWidth, videoHeight, canvasRef);
@@ -101,10 +100,15 @@ export default function WebComponent() {
 
   return (
     <div>
-      <p>{score}</p>
+      <div className="flex">
+        <p>{score}</p>
+        <p>{review}</p>
+      </div>
+
       <img src="/tree.jpg" ref={image} height={320} width={320}></img>
 
       <canvas
+      className="object-fill"
         ref={canvasRef}
         style={{
           position: "absolute",
@@ -115,11 +119,12 @@ export default function WebComponent() {
           textAlign: "center",
           zindex: 9,
           width: 1024,
-          height: 640,
+          height: 1024,
         }}
       />
 
       <Webcam
+        className="object-fill"
         ref={webcamRef}
         style={{
           position: "hidden",
@@ -130,7 +135,8 @@ export default function WebComponent() {
           textAlign: "center",
           zindex: 9,
           width: 1024,
-          height: 640,
+          height: 1024,
+          
         }}
       />
     </div>
