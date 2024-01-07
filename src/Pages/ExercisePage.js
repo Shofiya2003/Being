@@ -19,6 +19,7 @@ export default function Exercise() {
   const image = useRef(null);
   const [score, setscore] = useState("Your review");
   const [review,setReview] = useState(0);
+  const [currPose,setcurrPose] = useState(0)
   useEffect(() => {
     runPosenet();
   });
@@ -43,6 +44,7 @@ export default function Exercise() {
   };
 
   const getCoordinates = async (detector) => {
+    console.log(">>>>>>>>>>>>>>",image.current)
     const pose = await detector.estimatePoses(image.current);
     const videoWidth = image.current.width;
     const videoHeight = webcamRef.current.height;
@@ -65,6 +67,10 @@ export default function Exercise() {
       webcamRef.current.video.height = videoHeight;
       const pose = await detector.estimatePoses(video);
       
+      if(!image.current){
+        console.log("changing image")
+        return 
+      }
       const tree = await getCoordinates(detector);
 
       if (tree && tree?.keypoints && pose && pose[0]?.keypoints) {
@@ -98,14 +104,45 @@ export default function Exercise() {
     renderer.drawResult(pose[0]);
   };
 
+  const poses = [
+    {
+      img:"/tree.jpg",
+      name:"Tree Pose"
+    },
+    {
+      img:"/warrior-one.webp",
+      name:"Warrior-I Pose"
+    },
+    {
+      img:"/warrior-2.webp",
+      name:"Warrior-II Pose"
+    },
+    {
+      img:"/side-bend.jpg",
+      name:"Side Bend"
+    },
+    {
+      img:"/reverse-warrior-pose.webp",
+      name:"Reverse Warrior Pose"
+    }
+  ]
   return (
-    <div>
+    <div className="m-4">
+      <select onChange={(e)=>{
+        console.log(e.target.value)
+        setcurrPose(e.target.value)
+        // image.current.src = poses[e.target.value].img
+      }}>
+        {poses.map((pose,idx)=>{
+          return <option key={idx} id={idx} value={idx}>{pose.name}</option>
+        })}
+      </select>
       <div className="flex">
-        <p>{score}</p>
-        <p>{review}</p>
+        <p className="text-[30px]">{`${review}  ${score}`}</p>
+       
       </div>
 
-      <img src="/tree.jpg" ref={image} height={320} width={320}></img>
+      <img src={poses[currPose].img} ref={image} height={320} width={320}></img>
 
       <canvas
       className="object-fill"

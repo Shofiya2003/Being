@@ -12,7 +12,7 @@ function App() {
           <h1 className='logo text-[70px] text-[#343434] text-left'>BEING</h1>
           <nav className='flex text items-center flex-1 justify-center'>
             <div className='h-fit mr-8'>Login</div>
-            <div className='h-fit mr-8'>Poses</div>
+            <a href='/exercise'><div className='h-fit mr-8'>Exercise</div></a>
             <div className='h-fit mr-8'>Dashboard</div>
           </nav>
           <div className='rounded-2xl text border border-[2px] border-[#343434] px-6 py-2 flex items-center text-[16px]'>Join Us</div>
