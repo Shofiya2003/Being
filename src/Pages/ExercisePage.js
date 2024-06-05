@@ -20,6 +20,7 @@ export default function Exercise() {
   const [score, setscore] = useState("Your review");
   const [review,setReview] = useState(0);
   const [currPose,setcurrPose] = useState(0)
+  
   useEffect(() => {
     runPosenet();
   });
@@ -44,7 +45,7 @@ export default function Exercise() {
   };
 
   const getCoordinates = async (detector) => {
-    console.log(">>>>>>>>>>>>>>",image.current)
+   
     const pose = await detector.estimatePoses(image.current);
     const videoWidth = image.current.width;
     const videoHeight = webcamRef.current.height;
@@ -124,7 +125,11 @@ export default function Exercise() {
     {
       img:"/reverse-warrior-pose.webp",
       name:"Reverse Warrior Pose"
-    }
+    },
+    {
+      img:"/new pose.jpg",
+      name:"New pose"
+    },
   ]
   return (
     <div className="m-4">

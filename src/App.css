@@ -21,18 +21,141 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --white:#D2D1D1;
+  --grey:#505356;
+  --black:#030303;
+  --lightblack:#191A19;
+  --transparentblack:rgb(0 0 0 / 52%);
+  --background:rgb(255,88,100);
+  --gradient:linear-gradient(90deg, rgba(255,88,100,1) 0%, rgba(233,83,134,1) 0%, rgba(201,11,74,1) 21%, rgba(253,41,123,1) 58%, rgba(255,101,91,1) 82%);
+  --pink:#FEE3EC;
+  --transparent_grdient:linear-gradient(90deg, rgba(255,88,100,0.8) 0%, rgba(233,83,134,0.8) 0%, rgba(201,11,74,0.8) 21%, rgba(253,41,123,0.8) 58%, rgba(255,101,91,0.8) 82%);
+  --purple:#B8BADB;
 }
+*{
+  box-sizing: border-box;
+  margin: 0;
+  
+}
+#root{
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+
+}
+.auth_buttons>*{
+  border: 1px solid ;
+  border-color: var(--background);
+}
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  margin:0;
+}
+
+.heading{
+ 
+  margin: auto;
+  margin-top:95px;
+  font-size: 180%;
+  
+}
+
+
+.input{
+  background-color: var(--lightblack);
+  color: white;
+}
+
+.input input{
+  background-color: var(--lightblack);
+  border: none;
+  height: 42px;
+  width: 360px;
+  padding-left:9px ;
+  color: var(--white);
+  font-size: 15px;
+}
+
+.input_section > *,.auth_buttons>*{
+  height: 42px;
+  width: 360px;
+  margin: 10px;
+ border-radius: 6px;
+
+ justify-content: center;
+ align-items: center;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+.read_more_link{
+  color: white;
+  text-decoration: underline;
+}
+
+.login_body{
+ 
+  margin-top: 7rem;
+ align-items: center;
+ justify-content: center;
+}
+
+.forgot_text{
+  font-size: 16px;
+ margin: auto;
+ text-decoration: underline;
+}
+
+.login_body p{
+  margin: 0 40px;
+  font-weight: 600;
+}
+.login_div{
+  min-height: 100%;
+  min-width: 100%;
+  /* background-color: var(--black); */
+  /* color: var(--white); */
+  /* font-family: 'Montserrat', sans-serif; */
+}
+
+
+
+.flex{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_col{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.top_elements{
+  padding:0.5rem 0 0 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+svg{
+  color: #343434;
+}
+
+
+
+

@@ -6,12 +6,14 @@ export const poseSimilarity = (pose1, pose2) => {
   return cosineDistanceMatching(poseVector1, poseVector2);
 };
 
+
 // Normalizing the vectors to make sure that the coordinates in different space are at the same level 
 function getPoseVector(pose) {
 
   const xPos = pose.keypoints.map(k => k.x);
   const yPos = pose.keypoints.map(k => k.y);
 
+  
   let minX = Math.min(...xPos);
   // let maxX = Math.max(...keypoint.position.x);
   let minY = Math.min(...yPos);
@@ -26,7 +28,7 @@ function getPoseVector(pose) {
 }
 
 // Cosine similarity as a distance function. The lower the number, the closer the match
-// parameters are 17 *2  = 32 x and y coordinates of 17 different body parts
+// parameters are 17 *2  = 34 x and y coordinates of 17 different body parts
 function cosineDistanceMatching(poseVector1, poseVector2) {
   const cosineSimilarity = similarity(poseVector1, poseVector2);
   const distance = 2 * (1 - cosineSimilarity);

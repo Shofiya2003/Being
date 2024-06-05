@@ -8,6 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import WebComponent from './Pages/ExercisePage';
+import Login from './Pages/Login'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path:"/exercise",
     element:<WebComponent/>
+  },
+  {
+    path:"/login",
+    element:<Login/>
   }
 ]);
 

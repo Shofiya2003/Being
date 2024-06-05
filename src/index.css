@@ -20,6 +20,11 @@ code {
   background-repeat: no-repeat;
 }
 
+.login-hero{
+  background-image: url("../public/loginimage.avif");
+  background-repeat: no-repeat;
+}
+
 .logo{
   font-family: 'Vina Sans', sans-serif;
 }
