@@ -96,11 +96,14 @@ export default function Exercise() {
         } else {
           str = "Meh..";
         }
-        if(Math.round((1 - score) * 100)>90){
+        if(Math.round((1 - score) * 100)>=90){
           setReview("Hurray! You can now move on to next pose ....")
 
           setTimeout(()=>{
             setcurrPose((idx)=>{
+              if(idx+1==poses.length()-1){
+                return 0
+              }
               return idx+1
             })
           },2000)
@@ -147,15 +150,15 @@ export default function Exercise() {
       </select>
 
       <div className="flex">
-        <div>
+        <div style={{marginTop:80,marginLeft:30}}>
           <div className="flex">
             <p className="text-[30px]">{`${review}  ${score}`}</p>
           </div>
           <img
             src={poses[currPose]["image_url"]}
             ref={image}
-            height={320}
-            width={320}
+            height={500}
+            width={500}
           ></img>
         </div>
 
@@ -171,7 +174,7 @@ export default function Exercise() {
              
               zindex: 8,
               width: 500,
-              height: 700,
+              height: 800,
             }}
           />
 
@@ -184,7 +187,7 @@ export default function Exercise() {
               right: 76,
               textAlign: "center",
               width: 500,
-              height: 700,
+              height: 800,
               position: "absolute",
             }}
           />
