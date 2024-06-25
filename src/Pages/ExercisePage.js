@@ -8,6 +8,8 @@ import * as tf from "@tensorflow/tfjs-core";
 // Register one of the TF.js backends.
 import "@tensorflow/tfjs-backend-webgl";
 import { RendererCanvas2d } from "../utils";
+import poses from "../poses.json";
+import { useParams, useLocation } from "react-router-dom";
 
 export default function Exercise() {
   const SIMILARITY_THRESHOLD_EXCELLENT = 0.25;
@@ -18,15 +20,24 @@ export default function Exercise() {
 
   const image = useRef(null);
   const [score, setscore] = useState("Your review");
-  const [review,setReview] = useState(0);
-  const [currPose,setcurrPose] = useState(0)
-  
+  const [review, setReview] = useState(0);
+  const [currPose, setcurrPose] = useState(0);
+  const location = useLocation();
+
   useEffect(() => {
+    
     runPosenet();
   });
 
+  useEffect(()=>{
+    const queryParams = new URLSearchParams(location.search);
+    const idx = (Number)(queryParams.get("idx"));
+    setcurrPose(idx)
+  },[])
+
   const runPosenet = async () => {
     try {
+      console.log("here");
       await tf.ready();
       const detectorConfig = {
         modelType: poseDetection.movenet.modelType.SINGLEPOSE_LIGHTNING,
@@ -45,13 +56,12 @@ export default function Exercise() {
   };
 
   const getCoordinates = async (detector) => {
-   
     const pose = await detector.estimatePoses(image.current);
     const videoWidth = image.current.width;
     const videoHeight = webcamRef.current.height;
 
     console.log(pose[0]);
-   
+
     return pose[0];
   };
 
@@ -67,10 +77,10 @@ export default function Exercise() {
       webcamRef.current.video.width = videoWidth;
       webcamRef.current.video.height = videoHeight;
       const pose = await detector.estimatePoses(video);
-      
-      if(!image.current){
-        console.log("changing image")
-        return 
+
+      if (!image.current) {
+        console.log("changing image");
+        return;
       }
       const tree = await getCoordinates(detector);
 
@@ -86,8 +96,20 @@ export default function Exercise() {
         } else {
           str = "Meh..";
         }
-        setscore(Math.round((1-score)*100))
+        if(Math.round((1 - score) * 100)>90){
+          setReview("Hurray! You can now move on to next pose ....")
+
+          setTimeout(()=>{
+            setcurrPose((idx)=>{
+              return idx+1
+            })
+          },2000)
+          
+          return
+        }
+        setscore(Math.round((1 - score) * 100));
         setReview(str);
+        
       } else return;
 
       drawCanvas(pose, video, videoWidth, videoHeight, canvasRef);
@@ -105,88 +127,68 @@ export default function Exercise() {
     renderer.drawResult(pose[0]);
   };
 
-  const poses = [
-    {
-      img:"/tree.jpg",
-      name:"Tree Pose"
-    },
-    {
-      img:"/warrior-one.webp",
-      name:"Warrior-I Pose"
-    },
-    {
-      img:"/warrior-2.webp",
-      name:"Warrior-II Pose"
-    },
-    {
-      img:"/side-bend.jpg",
-      name:"Side Bend"
-    },
-    {
-      img:"/reverse-warrior-pose.webp",
-      name:"Reverse Warrior Pose"
-    },
-    {
-      img:"/new pose.jpg",
-      name:"New pose"
-    },
-  ]
   return (
     <div className="m-4">
-      <select onChange={(e)=>{
-        console.log(e.target.value)
-        setcurrPose(e.target.value)
-        // image.current.src = poses[e.target.value].img
-      }}>
-        {poses.map((pose,idx)=>{
-          return <option key={idx} id={idx} value={idx}>{pose.name}</option>
+      <select
+        onChange={(e) => {
+          console.log(e.target.value);
+          setcurrPose(e.target.value);
+          // image.current.src = poses[e.target.value].img
+        }}
+        value={currPose}
+      >
+        {poses.map((pose, idx) => {
+          return (
+            <option key={idx} id={idx} value={idx}>
+              {pose.name}
+            </option>
+          );
         })}
       </select>
+
       <div className="flex">
-        <p className="text-[30px]">{`${review}  ${score}`}</p>
-       
-      </div>
+        <div>
+          <div className="flex">
+            <p className="text-[30px]">{`${review}  ${score}`}</p>
+          </div>
+          <img
+            src={poses[currPose]["image_url"]}
+            ref={image}
+            height={320}
+            width={320}
+          ></img>
+        </div>
 
-      <div>
+        <div>
+          <canvas
+            className="object-fill"
+            ref={canvasRef}
+            style={{
+              position: "absolute",
+              
+              
+              right: 76,
+             
+              zindex: 8,
+              width: 500,
+              height: 700,
+            }}
+          />
 
-     
-
-      <img src={poses[currPose].img} ref={image} height={320} width={320}></img>
-
-      <div>
-
-        <canvas
-        className="object-fill"
-          ref={canvasRef}
-          style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zindex: 8,
-            width: 1024,
-            height: 1024,
-          }}
-        />
-
-        <Webcam
-          className="object-fill"
-          ref={webcamRef}
-          style={{
-            position: "hidden",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            width: 1024,
-            height: 1024,
-            position: "absolute"
-          }}
-        />
-      </div>
+          <Webcam
+            className="object-fill"
+            ref={webcamRef}
+            style={{
+              position: "hidden",
+              
+              right: 76,
+              textAlign: "center",
+              width: 500,
+              height: 700,
+              position: "absolute",
+            }}
+          />
+        </div>
       </div>
     </div>
   );

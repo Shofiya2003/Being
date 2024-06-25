@@ -1,8 +1,17 @@
 import React from "react";
 import Tag from "./Tag";
 import "./Tile.css";
+import { useNavigate } from 'react-router-dom';
 
-export default function Tile({ pose }) {
+export default function Tile({ pose,index }) {
+
+  const navigate = useNavigate();
+
+  const handleClick = (url,idx) => {
+    localStorage.setItem('imageUrl', url);
+    navigate(`/exercise?idx=${idx}`);
+  };
+
   return (
     <div className="tile p-[15px]">
       <section className="flex justify-start flex-col">
@@ -23,10 +32,8 @@ export default function Tile({ pose }) {
                 return <Tag tag={tag} />;
               })}
           </div>
-          <a
-            href={`/poses/posepage?name=${pose.name}`}
-            className={`tile__name mt-[15px] text-[21px] md:text-[24px] font-bold uppercase`}
-          >
+
+          <a href="#" className={`tile__name mt-[15px] text-[21px] md:text-[24px] font-bold uppercase`} onClick={() => handleClick(pose?.image_url,index)}>
             <p>{pose.name}</p>
           </a>
         </div>

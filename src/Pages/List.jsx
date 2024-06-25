@@ -15,7 +15,7 @@ export default function CyberCave() {
   const fetchTools = (page, sortBy, type, value) => {
     setLoading(true);
     if (!page) page = currentPage + 1;
-    let url = `http://localhost:5000/exercises?page=1`;
+    let url = `http://localhost:5000/exercises?page=${page}`;
     if (searchQuery !== "" && type !== "search") {
       url += `&search=${searchQuery}`;
     }
@@ -33,9 +33,10 @@ export default function CyberCave() {
             return result;
           });
           setCurrentPage(page);
-          if (response.data.length !== 10) {
+          if (response.data.exercises.length !== 10) {
             setHasNext(false);
           } else {
+            console.log("has next")
             setHasNext(true);
           }
         }
@@ -76,6 +77,7 @@ export default function CyberCave() {
               <Tile
                 key={`${tool.name} ${idx}`}
                 pose={tool}
+                index={idx}
               ></Tile>
             );
           })}

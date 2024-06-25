@@ -139,6 +139,11 @@ body{
   display: flex;
 }
 
+canvas{
+  z-index: 3;
+  
+}
+
 .flex_col{
   display: flex;
   flex-direction: column;

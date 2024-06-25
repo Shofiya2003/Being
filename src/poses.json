@@ -1,0 +1,410 @@
+[
+    {
+        "name": "Bharadvaja\u2019s Twist",
+        "image_url": "poses_images/0.webp"
+    },
+    {
+        "name": "Awkward Pose",
+        "image_url": "poses_images/1.jpg"
+    },
+    {
+        "name": "Bird Dog Pose",
+        "image_url": "poses_images/2.jpg"
+    },
+    {
+        "name": "Big Toe Pose",
+        "image_url": "poses_images/3.jpg"
+    },
+    {
+        "name": "Bird Of Paradise Pose",
+        "image_url": "poses_images/4.jpg"
+    },
+    {
+        "name": "Accomplished Pose",
+        "image_url": "poses_images/5.jpg"
+    },
+    {
+        "name": "Airplane Pose",
+        "image_url": "poses_images/6.jpg"
+    },
+    {
+        "name": "Baby Cobra Pose",
+        "image_url": "poses_images/7.webp"
+    },
+    {
+        "name": "Boat Pose",
+        "image_url": "poses_images/8.webp"
+    },
+    {
+        "name": "Baby Grasshopper Pose",
+        "image_url": "poses_images/9.jpg"
+    },
+    {
+        "name": "Bridge Pose",
+        "image_url": "poses_images/10.jpg"
+    },
+    {
+        "name": "Camel Pose",
+        "image_url": "poses_images/11.webp"
+    },
+    {
+        "name": "Archer Pose",
+        "image_url": "poses_images/12.jpg"
+    },
+    {
+        "name": "Cat Pose",
+        "image_url": "poses_images/13.jpg"
+    },
+    {
+        "name": "Bound Angle Pose",
+        "image_url": "poses_images/14.webp"
+    },
+    {
+        "name": "Bow Pose",
+        "image_url": "poses_images/15.jpg"
+    },
+    {
+        "name": "Cat-Cow Pose",
+        "image_url": "poses_images/16.jpg"
+    },
+    {
+        "name": "Chair Pose",
+        "image_url": "poses_images/17.jpg"
+    },
+    {
+        "name": "Chin Stand",
+        "image_url": "poses_images/18.jpg"
+    },
+    {
+        "name": "Child\u2019s Pose",
+        "image_url": "poses_images/19.jpg"
+    },
+    {
+        "name": "Compass Pose",
+        "image_url": "poses_images/20.jpg"
+    },
+    {
+        "name": "Cobra Pose",
+        "image_url": "poses_images/21.jpg"
+    },
+    {
+        "name": "Caterpillar Pose, Paschimottanasana",
+        "image_url": "poses_images/22.jpg"
+    },
+    {
+        "name": "Corpse Pose",
+        "image_url": "poses_images/23.jpg"
+    },
+    {
+        "name": "Crescent Lunge Pose",
+        "image_url": "poses_images/24.jpg"
+    },
+    {
+        "name": "Cow Face Pose",
+        "image_url": "poses_images/25.jpg"
+    },
+    {
+        "name": "Cow Pose",
+        "image_url": "poses_images/26.jpg"
+    },
+    {
+        "name": "Deer Pose",
+        "image_url": "poses_images/27.jpg"
+    },
+    {
+        "name": "Crane Pose",
+        "image_url": "poses_images/28.jpg"
+    },
+    {
+        "name": "Dancer\u2019s Pose",
+        "image_url": "poses_images/29.jpg"
+    },
+    {
+        "name": "Dolphin Plank Pose",
+        "image_url": "poses_images/30.jpg"
+    },
+    {
+        "name": "Crocodile Pose",
+        "image_url": "poses_images/31.jpg"
+    },
+    {
+        "name": "Crow Pose",
+        "image_url": "poses_images/32.jpg"
+    },
+    {
+        "name": "Eagle Pose",
+        "image_url": "poses_images/33.jpg"
+    },
+    {
+        "name": "Dolphin Pose",
+        "image_url": "poses_images/34.jpg"
+    },
+    {
+        "name": "Elephant Trunk Pose",
+        "image_url": "poses_images/35.jpg"
+    },
+    {
+        "name": "Downward Facing Dog Pose",
+        "image_url": "poses_images/36.jpg"
+    },
+    {
+        "name": "Dragonfly Pose",
+        "image_url": "poses_images/37.jpg"
+    },
+    {
+        "name": "Easy Pose",
+        "image_url": "poses_images/38.jpg"
+    },
+    {
+        "name": "Extended Side Angle Pose",
+        "image_url": "poses_images/39.jpg"
+    },
+    {
+        "name": "Eye Of The Needle Pose",
+        "image_url": "poses_images/40.jpg"
+    },
+    {
+        "name": "Fallen Triangle Pose",
+        "image_url": "poses_images/41.jpg"
+    },
+    {
+        "name": "Extended Puppy Pose",
+        "image_url": "poses_images/42.jpg"
+    },
+    {
+        "name": "Extended Hand To Big Toe Pose",
+        "image_url": "poses_images/43.jpg"
+    },
+    {
+        "name": "Eight Angle Pose",
+        "image_url": "poses_images/44.jpg"
+    },
+    {
+        "name": "Fallen Angel Pose",
+        "image_url": "poses_images/45.jpg"
+    },
+    {
+        "name": "Frog Pose",
+        "image_url": "poses_images/46.jpg"
+    },
+    {
+        "name": "Fire Log Pose",
+        "image_url": "poses_images/47.jpg"
+    },
+    {
+        "name": "Frog Pose, Bhekasana",
+        "image_url": "poses_images/48.jpg"
+    },
+    {
+        "name": "Fish Pose",
+        "image_url": "poses_images/49.jpg"
+    },
+    {
+        "name": "Flying Crow Pose",
+        "image_url": "poses_images/50.jpg"
+    },
+    {
+        "name": "Front Splits Pose",
+        "image_url": "poses_images/51.jpg"
+    },
+    {
+        "name": "Garland Pose",
+        "image_url": "poses_images/52.jpg"
+    },
+    {
+        "name": "Feathered Peacock Pose",
+        "image_url": "poses_images/53.jpg"
+    },
+    {
+        "name": "Four Limbed Staff Pose",
+        "image_url": "poses_images/54.jpg"
+    },
+    {
+        "name": "Gate Pose",
+        "image_url": "poses_images/55.jpg"
+    },
+    {
+        "name": "Goddess Pose",
+        "image_url": "poses_images/56.jpg"
+    },
+    {
+        "name": "Half Frog Pose",
+        "image_url": "poses_images/57.jpg"
+    },
+    {
+        "name": "Half Lord Of The Fishes Pose",
+        "image_url": "poses_images/58.jpg"
+    },
+    {
+        "name": "Half Splits Pose",
+        "image_url": "poses_images/59.jpg"
+    },
+    {
+        "name": "Half Lotus Pose",
+        "image_url": "poses_images/60.jpg"
+    },
+    {
+        "name": "Grasshopper Pose",
+        "image_url": "poses_images/61.jpg"
+    },
+    {
+        "name": "Half Pigeon Pose",
+        "image_url": "poses_images/62.jpg"
+    },
+    {
+        "name": "Half Happy Baby Pose",
+        "image_url": "poses_images/63.jpg"
+    },
+    {
+        "name": "Half Tortoise Pose, Ardha Kurmasana",
+        "image_url": "poses_images/64.jpg"
+    },
+    {
+        "name": "Half Moon Pose",
+        "image_url": "poses_images/65.jpg"
+    },
+    {
+        "name": "Heron Pose",
+        "image_url": "poses_images/66.jpg"
+    },
+    {
+        "name": "Happy Baby Pose",
+        "image_url": "poses_images/67.jpg"
+    },
+    {
+        "name": "High Lunge Pose",
+        "image_url": "poses_images/68.jpg"
+    },
+    {
+        "name": "Hero Pose",
+        "image_url": "poses_images/69.jpg"
+    },
+    {
+        "name": "Hands To Feet Pose",
+        "image_url": "poses_images/70.jpg"
+    },
+    {
+        "name": "Knee To Elbow Plank Pose",
+        "image_url": "poses_images/71.jpg"
+    },
+    {
+        "name": "Head-To-Knee Pose",
+        "image_url": "poses_images/72.jpg"
+    },
+    {
+        "name": "Humble Warrior Pose",
+        "image_url": "poses_images/73.jpg"
+    },
+    {
+        "name": "Hurdler\u2019s Pose",
+        "image_url": "poses_images/74.jpg"
+    },
+    {
+        "name": "Knees Chest Chin Pose",
+        "image_url": "poses_images/75.jpg"
+    },
+    {
+        "name": "Lion Pose",
+        "image_url": "poses_images/76.jpg"
+    },
+    {
+        "name": "King Pigeon Pose",
+        "image_url": "poses_images/77.jpg"
+    },
+    {
+        "name": "Locust Pose",
+        "image_url": "poses_images/78.jpg"
+    },
+    {
+        "name": "Legs Up The Wall Pose",
+        "image_url": "poses_images/79.jpg"
+    },
+    {
+        "name": "Lizard Pose",
+        "image_url": "poses_images/80.jpg"
+    },
+    {
+        "name": "Lotus Pose",
+        "image_url": "poses_images/81.jpg"
+    },
+    {
+        "name": "Low Lunge Pose",
+        "image_url": "poses_images/82.jpg"
+    },
+    {
+        "name": "Monkey pose",
+        "image_url": "poses_images/83.jpg"
+    },
+    {
+        "name": "Pendant Pose",
+        "image_url": "poses_images/84.jpg"
+    },
+    {
+        "name": "Noose Pose",
+        "image_url": "poses_images/85.jpg"
+    },
+    {
+        "name": "Plow Pose",
+        "image_url": "poses_images/86.jpg"
+    },
+    {
+        "name": "Pose Dedicated To The Sage Marichi C",
+        "image_url": "poses_images/87.jpg"
+    },
+    {
+        "name": "Pose Dedicated To The Sage Marichi B",
+        "image_url": "poses_images/88.jpg"
+    },
+    {
+        "name": "Mountain Pose",
+        "image_url": "poses_images/89.jpg"
+    },
+    {
+        "name": "Pigeon Pose",
+        "image_url": "poses_images/90.jpg"
+    },
+    {
+        "name": "Plank Pose",
+        "image_url": "poses_images/91.jpg"
+    },
+    {
+        "name": "Pose Dedicated To The Sage Marichi A",
+        "image_url": "poses_images/92.jpg"
+    },
+    {
+        "name": "Rabbit Pose",
+        "image_url": "poses_images/93.jpg"
+    },
+    {
+        "name": "Pyramid Pose",
+        "image_url": "poses_images/94.jpg"
+    },
+    {
+        "name": "Ragdoll Pose",
+        "image_url": "poses_images/95.jpg"
+    },
+    {
+        "name": "Reclined Twist Pose",
+        "image_url": "poses_images/96.jpg"
+    },
+    {
+        "name": "Pose Dedicated To The Sage Marichi D",
+        "image_url": "poses_images/97.jpg"
+    },
+    {
+        "name": "Reclined Hand To Big Toe Pose",
+        "image_url": "poses_images/98.jpg"
+    },
+    {
+        "name": "Peacock Pose",
+        "image_url": "poses_images/99.jpg"
+    },
+    {
+        "name": "Tree Pose",
+        "image_url": "tree.jpg"
+    },
+    {
+        "name": "Side Bend",
+        "image_url": "side-bend.jpg"
+    }
+]
