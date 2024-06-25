@@ -137,7 +137,6 @@ body{
 
 .flex{
   display: flex;
-  flex-direction: row;
 }
 
 .flex_col{

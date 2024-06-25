@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import WebComponent from './Pages/ExercisePage';
 import Login from './Pages/Login'
+import List from './Pages/List'
+import PosePage from './Pages/PosePage'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
   {
     path:"/login",
     element:<Login/>
+  },
+  {
+    path:"/poses",
+    element:<List/>
+  },
+  {
+    path:"/poses/posepage",
+    element:<PosePage/>
   }
 ]);
 

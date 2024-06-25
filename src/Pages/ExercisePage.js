@@ -147,40 +147,47 @@ export default function Exercise() {
        
       </div>
 
+      <div>
+
+     
+
       <img src={poses[currPose].img} ref={image} height={320} width={320}></img>
 
-      <canvas
-      className="object-fill"
-        ref={canvasRef}
-        style={{
-          position: "absolute",
-          marginLeft: "auto",
-          marginRight: "auto",
-          left: 0,
-          right: 0,
-          textAlign: "center",
-          zindex: 9,
-          width: 1024,
-          height: 1024,
-        }}
-      />
+      <div>
 
-      <Webcam
+        <canvas
         className="object-fill"
-        ref={webcamRef}
-        style={{
-          position: "hidden",
-          marginLeft: "auto",
-          marginRight: "auto",
-          left: 0,
-          right: 0,
-          textAlign: "center",
-          zindex: 9,
-          width: 1024,
-          height: 1024,
-          
-        }}
-      />
+          ref={canvasRef}
+          style={{
+            position: "absolute",
+            marginLeft: "auto",
+            marginRight: "auto",
+            left: 0,
+            right: 0,
+            textAlign: "center",
+            zindex: 8,
+            width: 1024,
+            height: 1024,
+          }}
+        />
+
+        <Webcam
+          className="object-fill"
+          ref={webcamRef}
+          style={{
+            position: "hidden",
+            marginLeft: "auto",
+            marginRight: "auto",
+            left: 0,
+            right: 0,
+            textAlign: "center",
+            width: 1024,
+            height: 1024,
+            position: "absolute"
+          }}
+        />
+      </div>
+      </div>
     </div>
   );
 }
